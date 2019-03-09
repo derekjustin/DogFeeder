@@ -1,6 +1,6 @@
 def dogClass():
 
-    # Dog Constructor
+    # dogClass Constructor
     def __init__(self, weightIn, ageIn):
         self.weight = weightIn
         self.age = ageIn
