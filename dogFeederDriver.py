@@ -1,12 +1,28 @@
 def main():
 
     objective = ""
-    quit = True
+    continu = True
 
     # Greeting
     print("Hello welcome to DogFeeder")
 
     # while loop to continue program
-    while quit:
+    getObjectiveInput(objective)
 
-        objective = input("What would you like to do?")
+
+def getObjectiveInput(objectiveIn):
+
+    continu = True
+
+    while continu:
+        objectiveIn = input("What would you like to do? ")
+
+        if objectiveIn == "add":
+            print("Dog was added to list")
+            continu = False
+
+        else:
+            print("Invalid Input, Please try again.")
+
+
+main()
