@@ -1,11 +1,12 @@
 
 from dogClass import dogClass
+from petTree import petTree
 
 def main():
 
     objective = 0
     sentinel = True
-
+    pets = petTree(None)
     # Greeting
     print("Hello welcome to DogFeeder")
 
@@ -17,6 +18,8 @@ def main():
             dog.setName(input("What is your dogs name: "))
             dog.setAge(input("How old is your dog: "))
             dog.setWeight(input("How much does your dog weigh in pounds: "))
+            pets.insert(dog)
+            print(dog.getName(), "has been successfully added to your household.")
 
 
 def getObjectiveInput():
