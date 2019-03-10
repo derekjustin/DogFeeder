@@ -21,7 +21,7 @@ class dogClass:
         return str(self._name) <= anotherPet._name
 
     def __str__(self):
-        return "Pet Name: " + str(self._name) + "\n Pet Age: " + str(self._age) + "\n Pet Weight: " + str(self._weight)
+        return "Pet Name: " + str(self._name) + "\nPet Age: " + str(self._age) + "\nPet Weight: " + str(self._weight)
 
     # Member Variable Setters
     def setName(self, nameIn):
