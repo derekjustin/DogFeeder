@@ -1,16 +1,16 @@
-def foodClass():
+class foodClass:
 
     # foodClass Constructor
-    def __init__(self, calsPerCupIn):
-        self.calsPerCup = calsPerCupIn
+    def __init__(self):
+        self._calsPerCup = 0
 
     # Member Variable Setters
     def setCalsPerCup(self, calsPerCupIn):
-        self.calsPerCup = calsPerCupIn
+        self._calsPerCup = calsPerCupIn
 
     # Member Variable Getters
     def getCalsPerCup(self):
-        return self.calsPerCup
+        return self._calsPerCup
 
 
 #Derek, added
