@@ -21,6 +21,8 @@ def main():
             dog.setWeight(input("How much does your dog weigh in pounds: "))
             pets.insert(dog)
             print(dog.getName(), "has been successfully added to your household.")
+            pets.printTree()
+
 
 
 def getObjectiveInput():

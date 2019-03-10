@@ -15,7 +15,7 @@ class petTree:
                     self.left = petTree(data)
                 else:
                     self.left.insert(data)
-            elif data > self.data:
+            elif data >= self.data:
                 if self.right is None:
                     self.right = petTree(data)
                 else:
@@ -23,9 +23,17 @@ class petTree:
         else:
             self.data = data
 
+    # Print the tree
+    def printTree(self):
+        if self.left:
+            self.left.printTree()
+        print(self.data),
+        if self.right:
+            self.right.printTree()
+
     def readCSVtoPetTree(self, fileNameIn):
-        with open(fileNameIn, mode='r') as csv_file:
-            csv_reader = csv.DictReader(csv_file)
+        with open('petInventory.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
             for row in csv_reader:
                 dog = dogClass()

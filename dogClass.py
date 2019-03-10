@@ -9,7 +9,19 @@ class dogClass:
         self._name = ""
 
     def __gt__(self, anotherPet):
-        return self._name[0] > anotherPet._name[0]
+        return str(self._name) > anotherPet._name
+
+    def __ge__(self, anotherPet):
+        return str(self._name) >= anotherPet._name
+
+    def __lt__(self, anotherPet):
+        return str(self._name) < anotherPet._name
+
+    def __le__(self, anotherPet):
+        return str(self._name) <= anotherPet._name
+
+    def __str__(self):
+        return "Pet Name: " + str(self._name) + "\n Pet Age: " + str(self._age) + "\n Pet Weight: " + str(self._weight)
 
     # Member Variable Setters
     def setName(self, nameIn):
