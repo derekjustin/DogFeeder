@@ -24,7 +24,7 @@ def main():
             pets.printTree()
             sentinel = int(input("Enter 1 to continue or 0 to quit: "))
 
-    pets.writePetTreeToCSV("petInventory.csv")
+    pets.initWritePetTreeToCSV("petInventory.csv")
 
 def getObjectiveInput():
 

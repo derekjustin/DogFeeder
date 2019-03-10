@@ -43,10 +43,13 @@ class petTree:
                 self.insert(dog)
         line_count += 1
 
-    def writePetTreeToCSV(self, fileNameIn):
+    def initWritePetTreeToCSV(self, fileNameIn):
         with open(fileNameIn, mode='w') as csv_file :
             csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            csv_writer.writerow([self.petTreeTraversal()])
+            self.writePetTreeNodeToCSV(self.data, csv_writer)
+
+    def writePetTreeNodeToCSV(self, data, csv_writer):
+        csv_writer.writerow(data)
 
     def petTreeTraversal(self):
         if self.left:
