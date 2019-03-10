@@ -1,5 +1,6 @@
+from dogClass import *
 
-class foodClass:
+class foodClass(dogClass):
 
     # foodClass Constructor
     def __init__(self):
@@ -22,7 +23,7 @@ class foodClass:
 
 #Derek, added
     def maxCaloricIntake(self):
-        rER = 70 * ( poundsToMetric( self.getWeight() )^( 3/4 ) )   
+        rER = 70 * ( self.poundsToMetric( self.getWeight() )^( 3/4 ) )
         return rER
         
 #Derek, added
