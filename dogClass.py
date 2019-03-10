@@ -6,7 +6,7 @@ def dogClass():
         self.age = ageIn
 
     # Member Variable Setters
-    def setWeight(self,weightIn):
+    def setWeight(self,weightIn): #In pounds
         self.weight = weightIn
 
     def setAge(self, ageIn):
