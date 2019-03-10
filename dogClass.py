@@ -9,16 +9,16 @@ class dogClass:
         self._name = ""
 
     def __gt__(self, anotherPet):
-        return str(self._name) > anotherPet._name
+        return str(self._name).upper() > anotherPet._name.upper()
 
     def __ge__(self, anotherPet):
-        return str(self._name) >= anotherPet._name
+        return str(self._name).upper() >= anotherPet._name.upper()
 
     def __lt__(self, anotherPet):
-        return str(self._name) < anotherPet._name
+        return str(self._name).upper() < anotherPet._name.upper()
 
     def __le__(self, anotherPet):
-        return str(self._name) <= anotherPet._name
+        return str(self._name).upper() <= anotherPet._name.upper()
 
     def __str__(self):
         return "Pet Name: " + str(self._name) + "\nPet Age: " + str(self._age) + "\nPet Weight: " + str(self._weight)

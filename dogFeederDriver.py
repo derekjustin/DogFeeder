@@ -5,7 +5,7 @@ from petTree import petTree
 def main():
 
     objective = 0
-    sentinel = True
+    sentinel = 1
     pets = petTree(None)
     pets.readCSVtoPetTree("petInventory.csv")
     # Greeting
@@ -22,8 +22,9 @@ def main():
             pets.insert(dog)
             print(dog.getName(), "has been successfully added to your household.")
             pets.printTree()
+            sentinel = int(input("Enter 1 to continue or 0 to quit: "))
 
-
+    pets.writePetTreeToCSV("petInventory.csv")
 
 def getObjectiveInput():
 

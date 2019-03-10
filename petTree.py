@@ -27,7 +27,7 @@ class petTree:
     def printTree(self):
         if self.left:
             self.left.printTree()
-        print(self.data),
+        print(self.data)
         if self.right:
             self.right.printTree()
 
@@ -42,3 +42,15 @@ class petTree:
                 dog.setWeight(row[2])
                 self.insert(dog)
         line_count += 1
+
+    def writePetTreeToCSV(self, fileNameIn):
+        with open(fileNameIn, mode='w') as csv_file :
+            csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            csv_writer.writerow([self.petTreeTraversal()])
+
+    def petTreeTraversal(self):
+        if self.left:
+            self.left.petTreeTraversal()
+        return self.data
+        if self.right:
+            self.right.petTreeTraversal()
