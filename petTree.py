@@ -54,12 +54,12 @@ class petTree(object):
                 self.insertNode(dog)
 
     def writePetTreeToCSV(self, fileNameIn):
-        with open(fileNameIn, 'w') as csv_file:
+        with open(fileNameIn, 'w', newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
             self._writePetTreeToCSV(self._root, csv_writer)
 
     def _writePetTreeToCSV(self, root, csv_writer):
-            if not root:
+            if root == None:
                 return
             self._writePetTreeToCSV(root._left, csv_writer)
             csv_writer.writerow(root._data.toFile())
