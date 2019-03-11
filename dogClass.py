@@ -23,6 +23,8 @@ class dogClass:
     def __str__(self):
         return "Pet Name: " + str(self._name) + "\nPet Age: " + str(self._age) + "\nPet Weight: " + str(self._weight)
 
+    def toFile(self):
+        return str(self._name), str(self._age), str(self._weight)
     # Member Variable Setters
     def setName(self, nameIn):
         self._name = nameIn
