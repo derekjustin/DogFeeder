@@ -3,11 +3,19 @@ from PositiveReinforcementClass import *
 class dogClass:
 
     # dogClass Constructor
-    def __init__(self):
-        self._weight = 0
-        self._age = 0
-        self._name = ""
-        self._positiveReinforcement = PositiveReinforcementClass()
+    def __init__(self, row=None):
+        if row == None:
+            self._name = ""
+            self._age = 0
+            self._weight = 0
+            self._dogDirectory = ""
+            #self._positiveReinforcement = PositiveReinforcementClass()
+        else:
+            self._name = row[0]
+            self._age = row[1]
+            self._weight = row[2]
+
+
 
     # Member Variable Setters
     def setName(self, nameIn):
@@ -19,6 +27,8 @@ class dogClass:
     def setWeight(self,weightIn):
         self._weight = weightIn
 
+    def setDogDirectory(self, dogDirectoryIn):
+        self._dogDirectory = dogDirectoryIn
 
     # Member Variable Getters
     def getName(self):
@@ -29,6 +39,12 @@ class dogClass:
 
     def getWeight(self):
         return self._weight
+
+    def getDogDirectory(self):
+        return self._dogDirectory
+
+    #Member Functions
+
 
 
     # Operator Overloads
@@ -48,8 +64,8 @@ class dogClass:
         return "Pet Name: " + str(self._name) + "\nPet Age: " + str(self._age) + "\nPet Weight: " + str(self._weight)
 
     # File formatting functions
-    def toFile(self):                                             # Add attributes when positiveReinforcement complete
-        return str(self._name), str(self._age), str(self._weight) #, str(self._positiveReinforcement.getFeed_1()),\
-                                                                  # str(self._positiveReinforcement.getFeed_2())
-
-
+    def toFile(self):
+        return str(self._name), str(self._age), str(self._weight)#, str(self._directory)
+        # Add attributes when positiveReinforcement complete
+        # , str(self._positiveReinforcement.getFeed_1()),\
+        # str(self._positiveReinforcement.getFeed_2())

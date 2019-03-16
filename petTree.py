@@ -43,15 +43,13 @@ class petTree(object):
         print(root._data)
         self._printInOrderPetTree(root._right)
 
-    def readCSVtoPetTree(self, fileNameIn):
+    def readCSVtoPetTree(self, fileNameIn, classIn):
         with open(fileNameIn, 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
-                dog = dogClass()
-                dog.setName(row[0])
-                dog.setAge(row[1])
-                dog.setWeight(row[2])
-                self.insertNode(dog)
+                newObject = classIn(row)
+                self.insertNode(newObject)
+
 
     def writePetTreeToCSV(self, fileNameIn):
         with open(fileNameIn, 'w', newline='') as csv_file:

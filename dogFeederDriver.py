@@ -7,7 +7,7 @@ def main():
     objective = 0
     sentinel = 1
     pets = petTree()
-    pets.readCSVtoPetTree("petInventory.csv")
+    pets.readCSVtoPetTree("petInventory.csv", dogClass)
     # Greeting
     print("Hello welcome to DogFeeder")
 
