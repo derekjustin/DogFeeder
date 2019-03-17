@@ -16,19 +16,8 @@ def main():
         objective = getObjectiveInput()
         if objective == 1:
             dog = dogClass()
-            dog.setName(input("What is your dogs name: "))
-            dog.setAge(input("How old is your dog: "))
-            dog.setWeight(input("How much does your dog weigh in pounds: "))
-            dog.setBaseDirectory(dog.getName())
-            dog.setButtonPushDirectory(dog.getBaseDirectory())
-            dog.setMotionSenseDirectory(dog.getBaseDirectory())
-            dog.setDailyStepsDirectory(dog.getBaseDirectory())
-            dog.setHeartRateDirectory(dog.getBaseDirectory())
-            dog.createDirectory(dog.getBaseDirectory())
-            dog.createDirectory(dog.getButtonPushDirectory())
-            dog.createDirectory(dog.getMotionSenseDirectory())
-            dog.createDirectory(dog.getDailyStepsDirectory())
-            dog.createDirectory(dog.getHeartRateDirectory())
+            dog.getSetDogInfo()
+            dog.createDogDirectorySystem()
             pets.insertNode(dog)
             print(dog.getName(), "has been successfully added to your household.")
             sentinel = int(input("Enter 1 to continue or 0 to quit: "))
@@ -48,6 +37,8 @@ def getObjectiveInput():
             return 1
         else:
             print("Invalid Input, Please try again.")
+
+
 
 
 main()

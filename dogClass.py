@@ -94,7 +94,22 @@ class dogClass:
         except FileExistsError:
             pass
 
+    def getSetDogInfo(self):
+        self.setName(input("What is your dogs name: "))
+        self.setAge(input("How old is your dog: "))
+        self.setWeight(input("How much does your dog weigh in pounds: "))
+        self.setBaseDirectory(self.getName())
+        self.setButtonPushDirectory(self.getBaseDirectory())
+        self.setMotionSenseDirectory(self.getBaseDirectory())
+        self.setDailyStepsDirectory(self.getBaseDirectory())
+        self.setHeartRateDirectory(self.getBaseDirectory())
 
+    def createDogDirectorySystem(self):
+        self.createDirectory(self.getBaseDirectory())
+        self.createDirectory(self.getButtonPushDirectory())
+        self.createDirectory(self.getMotionSenseDirectory())
+        self.createDirectory(self.getDailyStepsDirectory())
+        self.createDirectory(self.getHeartRateDirectory())
 
     # Operator Overloads
     def __gt__(self, anotherPet):
