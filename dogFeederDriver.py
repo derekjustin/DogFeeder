@@ -4,7 +4,7 @@ from petTree import petTree
 
 def main():
 
-    objective = 0
+    objective = ""
     sentinel = 1
     pets = petTree()
     pets.readCSVtoPetTree("petInventory.csv", dogClass)
@@ -14,7 +14,12 @@ def main():
     # while loop to continue program
     while sentinel:
         objective = getObjectiveInput()
-        if objective == 1:
+        if objective.upper() == "QUIT" or objective.upper() == "Q":
+            print("Goodbye")
+            sentinel = 0
+            break
+        elif objective.upper() == "ADD" or objective.upper() == "A":
+            print("Okay lets add your dog to your household.")
             dog = dogClass()
             dog.getSetDogInfo()
             dog.createDogDirectorySystem()
@@ -30,11 +35,11 @@ def getObjectiveInput():
     sentinel = True
 
     while sentinel:
-        objective = input("What would you like to do? ")
-
-        if objective == "1":
-            print("Okay lets add your dog to your household.")
-            return 1
+        objective = input("What would you like to do?\nEnter 'Quit' to quit.\nEnter 'Add' to add dog to household.\nInput: ")
+        if objective.upper == "QUIT" or objective.upper() == "Q":
+            return "Q"
+        elif objective.upper() == "ADD" or objective.upper() == "A":
+            return "A"
         else:
             print("Invalid Input, Please try again.")
 
