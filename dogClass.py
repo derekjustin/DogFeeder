@@ -10,10 +10,10 @@ class dogClass:
             self._age = 0
             self._weight = 0
             self._baseDirectory = " "
-            self._buttonPushDirectory = "/button_push"
-            self._motionSenseDirectory = "/motion_sense"
-            self._dailyStepsDirectory = "/daily_steps"
-            self._heartRateDirectory = "/heart_rate"
+            self._buttonPushDirectory = " "
+            self._motionSenseDirectory = " "
+            self._dailyStepsDirectory = " "
+            self._heartRateDirectory = " "
             #self._positiveReinforcement = PositiveReinforcementClass()
         else:
             self._name = row[0]
