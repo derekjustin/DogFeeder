@@ -7,7 +7,7 @@ def main():
     objective = ""
     sentinel = 1
     pets = petTree()
-    pets.readCSVtoPetTree("petInventory.csv", dogClass)
+    pets.readCSVtoPetTree("dogs/petInventory.csv", dogClass)
     # Greeting
     print("Hello welcome to DogFeeder")
 
@@ -28,7 +28,7 @@ def main():
             sentinel = int(input("Enter 1 to continue or 0 to quit: "))
 
     pets.printInOrderPetTree()
-    pets.writePetTreeToCSV("petInventory.csv")
+    pets.writePetTreeToCSV("dogs/petInventory.csv")
 
 def getObjectiveInput():
 
