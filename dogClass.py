@@ -20,10 +20,10 @@ class dogClass:
             self._age = row[1]
             self._weight = row[2]
             self._baseDirectory = row[3]
-            self._buttonPushDirectory = self.getBaseDirectory() + "/button_push"
-            self._motionSenseDirectory = self.getBaseDirectory() + "/motion_sense"
-            self._dailyStepsDirectory = self.getBaseDirectory() + "/daily_steps"
-            self._heartRateDirectory = self.getBaseDirectory() + "/heart_rate"
+            self._buttonPushDirectory = row[4]
+            self._motionSenseDirectory = row[5]
+            self._dailyStepsDirectory = row[6]
+            self._heartRateDirectory = row[7]
             self.createDirectory(self.getBaseDirectory())
             self.createDirectory(self.getButtonPushDirectory())
             self.createDirectory(self.getMotionSenseDirectory())
@@ -92,7 +92,6 @@ class dogClass:
             # Create target Directory
             os.makedirs(pathIn)
         except FileExistsError:
-            print("file not created")
             pass
 
 
@@ -117,7 +116,9 @@ class dogClass:
 
     # File formatting functions
     def toFile(self):
-        return str(self._name), str(self._age), str(self._weight), str(self._baseDirectory)
+        return str(self._name), str(self._age), str(self._weight), str(self._baseDirectory),\
+               str(self._buttonPushDirectory), str(self._motionSenseDirectory), str(self._dailyStepsDirectory),\
+               str(self._heartRateDirectory)
         # Add attributes when positiveReinforcement complete
         # , str(self._positiveReinforcement.getFeed_1()),\
         # str(self._positiveReinforcement.getFeed_2())
