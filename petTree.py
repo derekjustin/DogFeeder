@@ -47,14 +47,18 @@ class petTree(object):
         with open(fileNameIn, 'r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
+                if not row:
+                    return
                 newObject = classIn(row)
                 self.insertNode(newObject)
+        csv_file.close()
 
 
     def writePetTreeToCSV(self, fileNameIn):
         with open(fileNameIn, 'w', newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
             self._writePetTreeToCSV(self._root, csv_writer)
+        csv_file.close()
 
     def _writePetTreeToCSV(self, root, csv_writer):
             if root == None:
